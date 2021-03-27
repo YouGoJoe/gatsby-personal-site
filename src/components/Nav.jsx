@@ -1,23 +1,55 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from "react"
+import {Link} from "gatsby"
+import styled from "styled-components"
+
+const NavStyled = styled.div`
+  ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  li {
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--primary);
+    &:visited {
+      color: var(--primary);
+    }
+    &:hover {
+      color: var(--accent);
+    }
+    &[aria-current="page"] {
+      text-decoration: underline;
+    }
+  }
+`
 
 const Nav = () => (
-  <div>
+  <NavStyled>
     <ul>
       <li>
-        <Link to="/">Hot NOw</Link>
+        <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/pizzas">Pizza Menu</Link>
+        <Link to="/about">About</Link>
       </li>
       <li>
-        <Link to="/slicemasters">SliceMasters</Link>
+        <Link to="/reviews">Reviews</Link>
       </li>
       <li>
-        <Link to="/orders">Order Ahead</Link>
+        <Link to="/Creative">Creative</Link>
       </li>
     </ul>
-  </div>
-);
+  </NavStyled>
+)
 
-export default Nav;
+export default Nav
